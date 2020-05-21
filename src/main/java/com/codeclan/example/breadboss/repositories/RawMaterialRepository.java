@@ -20,5 +20,5 @@ public interface RawMaterialRepository extends JpaRepository<RawMaterial, Long> 
 
   List<RawMaterial> findBySupplier(String supplier);
 
-  List<RawMaterial> findByIngredientsRecipeName(String name);
+  List<RawMaterial> findAllByIngredientsRecipeName(String name);
 }

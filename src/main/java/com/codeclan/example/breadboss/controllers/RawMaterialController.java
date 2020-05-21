@@ -37,7 +37,7 @@ public class RawMaterialController {
       return  new ResponseEntity<>(rawMaterialRepository.findBySupplier(supplier), HttpStatus.OK);
     }
     if(recipeName != null){
-      return  new ResponseEntity<>(rawMaterialRepository.findByIngredientsRecipeName(recipeName), HttpStatus.OK);
+      return  new ResponseEntity<>(rawMaterialRepository.findAllByIngredientsRecipeName(recipeName), HttpStatus.OK);
     }
     if(types != null){
       return  new ResponseEntity<>(rawMaterialRepository.findByTypeIn(types), HttpStatus.OK);
@@ -49,7 +49,7 @@ public class RawMaterialController {
 
   @GetMapping(value = "/raw_materials/{id}")
   public ResponseEntity getRawMaterial(@PathVariable Long id){
-    return new ResponseEntity<>(rawMaterialRepository.findById(id), HttpStatus.OK);
+    return new ResponseEntity (rawMaterialRepository.findById(id), HttpStatus.OK);
   }
 
   @PostMapping(value = "/raw_materials")

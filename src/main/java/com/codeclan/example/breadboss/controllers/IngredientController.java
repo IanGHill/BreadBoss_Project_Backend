@@ -34,6 +34,10 @@ public class IngredientController {
     return new ResponseEntity<>(foundIngredients, HttpStatus.OK);
   }
 
+  @GetMapping(value = "/ingredients/recipe/{id}")
+  public ResponseEntity getIngredients(@PathVariable Long id){
+    return new ResponseEntity<>(ingredientRepository.findByRecipeId(id), HttpStatus.OK);
+  }
   @GetMapping(value = "/ingredients/{id}")
   public ResponseEntity getIngredient(@PathVariable Long id){
     return new ResponseEntity<>(ingredientRepository.findById(id), HttpStatus.OK);
