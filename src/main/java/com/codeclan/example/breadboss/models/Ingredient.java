@@ -1,5 +1,7 @@
 package com.codeclan.example.breadboss.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,6 +12,7 @@ public class Ingredient {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
+  @JsonBackReference
   @ManyToOne
   @JoinColumn(name = "recipe_id", nullable = false)
   private Recipe recipe;

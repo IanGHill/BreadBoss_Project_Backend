@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +32,10 @@ public class Recipe {
     (name = "updated", nullable = false)
   private Date updated;
 
+
+  @OneToMany(mappedBy = "recipe")
+  private List<Ingredient> ingredients;
+
   @PrePersist
   protected void onCreate() {
     created = new Date();
@@ -42,10 +45,6 @@ public class Recipe {
   protected void onUpdate() {
     updated = new Date();
   }
-
-  @JsonBackReference
-  @OneToMany(mappedBy = "recipe")
-  private List<Ingredient> ingredients;
 
   public Recipe(String name, String type) {
     this.name = name;
