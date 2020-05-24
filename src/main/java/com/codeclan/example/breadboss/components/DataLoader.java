@@ -43,7 +43,7 @@ public class DataLoader implements ApplicationRunner {
     RawMaterial water = new RawMaterial("Water","Liquid","N/A",0, (float) 0.0);
     RawMaterial rawMaterial19 = new RawMaterial("5 Grain Blend","Other","Shipton Mill",1000, (float) 1.3);
     RawMaterial beetroot = new RawMaterial("Beetroot - Roasted","Other","Morrisons",200, (float) 1.7);
-    RawMaterial rawMaterial21 = new RawMaterial("Miso","Other","Wholefoods online",300, (float) 3.0);
+    RawMaterial misoPaste = new RawMaterial("Miso","Other","Wholefoods online",300, (float) 3.0);
     RawMaterial oliveOil = new RawMaterial("Olive Oil","Other","Lidl",750, (float) 2.39);
     RawMaterial rawMaterial23 = new RawMaterial("Olives - Green","Other","Lidl",340, (float) 0.59);
     RawMaterial rawMaterial24 = new RawMaterial("Olives - Kalamata","Other","Sainsburys",335, (float) 1.9);
@@ -57,7 +57,7 @@ public class DataLoader implements ApplicationRunner {
     RawMaterial sunflowerSeeds = new RawMaterial("Seeds - Sunflower","Other","Wholefoods online",1000, (float) 3.67);
     RawMaterial caraway = new RawMaterial("Caraway","Other","Wholefoods online",100, (float) 3.67);
     RawMaterial rawMaterial33 = new RawMaterial("Seeds - White Sesame","Other","Wholefoods online",1000, (float) 4.91);
-    RawMaterial rawMaterial34 = new RawMaterial("Sesame Oil","Other","Morrisons",250, (float) 1.8);
+    RawMaterial sesameOil = new RawMaterial("Sesame Oil","Other","Morrisons",250, (float) 1.8);
     RawMaterial rawMaterial35 = new RawMaterial("Sweet Potato - Dried","Other","Morrisons",500, (float) 1.0);
     RawMaterial rawMaterial36 = new RawMaterial("Sweet Potato - Fresh","Other","Morrisons",1000, (float) 1.0);
     RawMaterial rawMaterial37 = new RawMaterial("Walnuts","Other","Wholefoods online",1000, (float) 8.99);
@@ -85,7 +85,7 @@ public class DataLoader implements ApplicationRunner {
     rawMaterialRepository.save(water);
     rawMaterialRepository.save(rawMaterial19);
     rawMaterialRepository.save(beetroot);
-    rawMaterialRepository.save(rawMaterial21);
+    rawMaterialRepository.save(misoPaste);
     rawMaterialRepository.save(oliveOil);
     rawMaterialRepository.save(rawMaterial23);
     rawMaterialRepository.save(rawMaterial24);
@@ -98,7 +98,7 @@ public class DataLoader implements ApplicationRunner {
     rawMaterialRepository.save(pumpkinSeeds);
     rawMaterialRepository.save(sunflowerSeeds);
     rawMaterialRepository.save(rawMaterial33);
-    rawMaterialRepository.save(rawMaterial34);
+    rawMaterialRepository.save(sesameOil);
     rawMaterialRepository.save(rawMaterial35);
     rawMaterialRepository.save(rawMaterial36);
     rawMaterialRepository.save(rawMaterial37);
@@ -313,6 +313,56 @@ public class DataLoader implements ApplicationRunner {
     Ingredient ingredient84 = new Ingredient(NYDR, salt, "Dough", 22);
     Ingredient ingredient85 = new Ingredient(NYDR, water, "Dough", 540);
     Ingredient ingredient86 = new Ingredient(NYDR, caraway, "Dough", 10);
+    ingredientRepository.save(ingredient79);
+    ingredientRepository.save(ingredient80);
+    ingredientRepository.save(ingredient81);
+    ingredientRepository.save(ingredient82);
+    ingredientRepository.save(ingredient83);
+    ingredientRepository.save(ingredient84);
+    ingredientRepository.save(ingredient85);
+    ingredientRepository.save(ingredient86);
+
+    Recipe miso = new Recipe("Miso & Sesame Sourdough", "Sourdough");
+    miso.setImageUrl("miso.jpg");
+    recipeRepository.save(miso);
+    Ingredient ingredient87 = new Ingredient(miso, strongBreadFlour, "Levain", 100);
+    Ingredient ingredient88 = new Ingredient(miso, water, "Levain", 80);
+    Ingredient ingredient89 = new Ingredient(miso, wheatStarter, "Levain", 20);
+    Ingredient ingredient90 = new Ingredient(miso, strongBreadFlour, "Dough", 700);
+    Ingredient ingredient91 = new Ingredient(miso, wholewheatFlour, "Dough", 300);
+    Ingredient ingredient92 = new Ingredient(miso, T85, "Dough", 100);
+    Ingredient ingredient93 = new Ingredient(miso, salt, "Dough", 17);
+    Ingredient ingredient94 = new Ingredient(miso, water, "Dough", 780);
+    Ingredient ingredient95 = new Ingredient(miso, misoPaste, "Dough", 50);
+    Ingredient ingredient96 = new Ingredient(miso, sesameOil, "Dough", 15);
+    ingredientRepository.save(ingredient87);
+    ingredientRepository.save(ingredient88);
+    ingredientRepository.save(ingredient89);
+    ingredientRepository.save(ingredient90);
+    ingredientRepository.save(ingredient91);
+    ingredientRepository.save(ingredient92);
+    ingredientRepository.save(ingredient93);
+    ingredientRepository.save(ingredient94);
+    ingredientRepository.save(ingredient95);
+    ingredientRepository.save(ingredient96);
+
+    Recipe ww = new Recipe("Wholewheat Sourdough", "Sourdough");
+    ww.setImageUrl("wholewheat.jpg");
+    recipeRepository.save(ww);
+    Ingredient ingredient97 = new Ingredient(ww, wholewheatFlour, "Levain", 2000);
+    Ingredient ingredient98 = new Ingredient(ww, water, "Levain", 1200);
+    Ingredient ingredient99 = new Ingredient(ww, wheatStarter, "Levain", 400);
+    Ingredient ingredient100 = new Ingredient(ww, wholewheatFlour, "Dough", 5500);
+    Ingredient ingredient101 = new Ingredient(ww, extraStrongFlour, "Dough", 2500);
+    Ingredient ingredient102 = new Ingredient(ww, salt, "Dough", 180);
+    Ingredient ingredient103 = new Ingredient(ww, water, "Dough", 6800);
+    ingredientRepository.save(ingredient97);
+    ingredientRepository.save(ingredient98);
+    ingredientRepository.save(ingredient99);
+    ingredientRepository.save(ingredient100);
+    ingredientRepository.save(ingredient101);
+    ingredientRepository.save(ingredient102);
+    ingredientRepository.save(ingredient103);
 
 
 

@@ -26,7 +26,7 @@ public class RecipeController {
       return  new ResponseEntity<>(recipeRepository.findByName(recipeName), HttpStatus.OK);
     }
 
-    List<Recipe> foundRecipes = recipeRepository.findAll();
+    List<Recipe> foundRecipes = recipeRepository.findAllByOrderByName();
     return new ResponseEntity<>(foundRecipes, HttpStatus.OK);
   }
 
