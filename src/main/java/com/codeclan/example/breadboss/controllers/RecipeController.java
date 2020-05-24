@@ -52,7 +52,7 @@ public class RecipeController {
     return new ResponseEntity<>(Recipe, HttpStatus.CREATED);
   }
 
-  @DeleteMapping(value = "/recipes/{id}")
+  @DeleteMapping(value = "/recipes/delete/{id}")
   public ResponseEntity<List<Recipe>> deleteRecipe(@PathVariable Long id){
     recipeRepository.deleteById(id);
     return new ResponseEntity<>(recipeRepository.findAll(), HttpStatus.OK);

@@ -25,21 +25,21 @@ public class DataLoader implements ApplicationRunner {
 
   public void run(ApplicationArguments args) {
 
-    RawMaterial ciabattaFlour = new RawMaterial("Flour - Ciabatta (T00)","Flour","Shipton Mill",10000, (float) 11.13);
+    RawMaterial ciabattaFlour = new RawMaterial("Flour - Ciabatta (T00)","Flour","Shipton Mill",1000, (float) 1.30);
     RawMaterial rawMaterial2 = new RawMaterial("Flour - Einkorn","Flour","Shipton Mill",1000, (float) 2.1);
     RawMaterial rawMaterial3 = new RawMaterial("Flour - Emmer","Flour","Shipton Mill",1000, (float) 1.75);
     RawMaterial rawMaterial4 = new RawMaterial("Flour - Extra Strong","Flour","Mungoswells",16000, (float) 13.55);
     RawMaterial rawMaterial5 = new RawMaterial("Flour - Granary","Flour","Shipton Mill",1000, (float) 1.3);
     RawMaterial rawMaterial6 = new RawMaterial("Flour - Khorasan","Flour","Shipton Mill",1000, (float) 1.75);
-    RawMaterial rawMaterial7 = new RawMaterial("Flour - Rye Dark","Flour","Mungoswells",16000, (float) 11.17);
+    RawMaterial rawMaterial7 = new RawMaterial("Flour - Rye Dark","Flour","Mungoswells",16000, (float) 12.17);
     RawMaterial rawMaterial8 = new RawMaterial("Flour - Rye Light","Flour","Shipton Mill",1000, (float) 1.3);
     RawMaterial rawMaterial9 = new RawMaterial("Flour - Spelt White","Flour","Shipton Mill",1000, (float) 2.0);
     RawMaterial rawMaterial10 = new RawMaterial("Flour - Spelt Wholemeal","Flour","Shipton Mill",1000, (float) 2.23);
-    RawMaterial strongBreadFlour= new RawMaterial("Flour - Strong Bread","Flour","Mungoswells",16000, (float) 13.55);
-    RawMaterial T85 = new RawMaterial("Flour - T85","Flour","Mungoswells",16000, (float) 13.48);
-    RawMaterial wholewheatFlour = new RawMaterial("Flour - Wholewheat","Flour","Mungoswells",16000, (float) 13.01);
-    RawMaterial rawMaterial14 = new RawMaterial("Flour - YQ","Flour","Hodemedods",1000, (float) 2.45);
-    RawMaterial rawMaterial15 = new RawMaterial("Ale","Liquid","Lidl",500, (float) 1.25);
+    RawMaterial strongBreadFlour= new RawMaterial("Flour - Strong Bread","Flour","Mungoswells",16000, (float) 16.09);
+    RawMaterial T85 = new RawMaterial("Flour - T85","Flour","Mungoswells",16000, (float) 15.40);
+    RawMaterial wholewheatFlour = new RawMaterial("Flour - Wholewheat","Flour","Mungoswells",16000, (float) 14.86);
+    RawMaterial rawMaterial14 = new RawMaterial("Flour - YQ","Flour","Hodemedods",3000, (float) 4.99);
+    RawMaterial ale = new RawMaterial("Ale","Liquid","Lidl",500, (float) 1.25);
     RawMaterial water = new RawMaterial("Water","Liquid","N/A",0, (float) 0.0);
     RawMaterial rawMaterial19 = new RawMaterial("5 Grain Blend","Other","Shipton Mill",1000, (float) 1.3);
     RawMaterial rawMaterial20 = new RawMaterial("Beetroot - Dried","Other","Morrisons",200, (float) 1.7);
@@ -47,14 +47,14 @@ public class DataLoader implements ApplicationRunner {
     RawMaterial oliveOil = new RawMaterial("Olive Oil","Other","Lidl",750, (float) 2.39);
     RawMaterial rawMaterial23 = new RawMaterial("Olives - Green","Other","Lidl",340, (float) 0.59);
     RawMaterial rawMaterial24 = new RawMaterial("Olives - Kalamata","Other","Sainsburys",335, (float) 1.9);
-    RawMaterial rawMaterial25 = new RawMaterial("Pearl Barley","Other","Morrisons",500, (float) 0.53);
+    RawMaterial pearlBarley = new RawMaterial("Pearl Barley","Other","Morrisons",500, (float) 0.53);
     RawMaterial rawMaterial26 = new RawMaterial("Rosemary","Other","Morrisons",31, (float) 0.72);
     RawMaterial rawMaterial27 = new RawMaterial("Seeds - Black Sesame","Other","Wholefoods online",100, (float) 1.5);
-    RawMaterial flaxSeeds = new RawMaterial("Seeds - Brown Linseed","Other","Wholefoods online",1000, (float) 3.89);
+    RawMaterial flaxSeeds = new RawMaterial("Seeds - Flax","Other","Wholefoods online",1000, (float) 3.89);
     RawMaterial chiaSeeds = new RawMaterial("Seeds - Chia","Other","Wholefoods online",1000, (float) 5.89);
     RawMaterial rawMaterial30 = new RawMaterial("Seeds - Cumin","Other","Morrisons",37, (float) 0.8);
     RawMaterial rawMaterial31 = new RawMaterial("Seeds - Pumpkin","Other","Wholefoods online",1000, (float) 6.47);
-    RawMaterial rawMaterial32 = new RawMaterial("Seeds - Sunflower ","Other","Wholefoods online",1000, (float) 3.67);
+    RawMaterial sunflowerSeeds = new RawMaterial("Seeds - Sunflower ","Other","Wholefoods online",1000, (float) 3.67);
     RawMaterial rawMaterial33 = new RawMaterial("Seeds - White Sesame","Other","Wholefoods online",1000, (float) 4.91);
     RawMaterial rawMaterial34 = new RawMaterial("Sesame Oil","Other","Morrisons",250, (float) 1.8);
     RawMaterial rawMaterial35 = new RawMaterial("Sweet Potato - Dried","Other","Morrisons",500, (float) 1.0);
@@ -63,6 +63,7 @@ public class DataLoader implements ApplicationRunner {
     RawMaterial salt = new RawMaterial("Sea Salt","Salt","Morrisons",350, (float) 0.8);
     RawMaterial ryeStarter = new RawMaterial("Starter - Rye","Starter","N/A",0, (float) 0.0);
     RawMaterial wheatStarter = new RawMaterial("Starter - Wheat","Starter","N/A",0, (float) 0.0);
+    RawMaterial sugar = new RawMaterial("Sugar - granulated","Other","Morrisons",1000, (float) 0.8);
     RawMaterial yeast = new RawMaterial("Yeast - Fresh","Yeast","Morrisons",100, (float) 0.5);
     rawMaterialRepository.save(ciabattaFlour);
     rawMaterialRepository.save(rawMaterial2);
@@ -79,7 +80,7 @@ public class DataLoader implements ApplicationRunner {
     rawMaterialRepository.save(T85);
     rawMaterialRepository.save(wholewheatFlour);
     rawMaterialRepository.save(rawMaterial14);
-    rawMaterialRepository.save(rawMaterial15);
+    rawMaterialRepository.save(ale);
     rawMaterialRepository.save(water);
     rawMaterialRepository.save(rawMaterial19);
     rawMaterialRepository.save(rawMaterial20);
@@ -87,14 +88,14 @@ public class DataLoader implements ApplicationRunner {
     rawMaterialRepository.save(oliveOil);
     rawMaterialRepository.save(rawMaterial23);
     rawMaterialRepository.save(rawMaterial24);
-    rawMaterialRepository.save(rawMaterial25);
+    rawMaterialRepository.save(pearlBarley);
     rawMaterialRepository.save(rawMaterial26);
     rawMaterialRepository.save(rawMaterial27);
     rawMaterialRepository.save(flaxSeeds);
     rawMaterialRepository.save(chiaSeeds);
     rawMaterialRepository.save(rawMaterial30);
     rawMaterialRepository.save(rawMaterial31);
-    rawMaterialRepository.save(rawMaterial32);
+    rawMaterialRepository.save(sunflowerSeeds);
     rawMaterialRepository.save(rawMaterial33);
     rawMaterialRepository.save(rawMaterial34);
     rawMaterialRepository.save(rawMaterial35);
@@ -103,6 +104,7 @@ public class DataLoader implements ApplicationRunner {
     rawMaterialRepository.save(salt);
     rawMaterialRepository.save(ryeStarter);
     rawMaterialRepository.save(wheatStarter);
+    rawMaterialRepository.save(sugar);
     rawMaterialRepository.save(yeast);
 
     Recipe recipe1 = new Recipe("50:50 Wholewheat","Sourdough");
@@ -128,9 +130,9 @@ public class DataLoader implements ApplicationRunner {
   Ingredient ingredient9 = new Ingredient(focaccia, water, "Levain", 400);
   Ingredient ingredient10 = new Ingredient(focaccia, yeast, "Levain", 1);
   Ingredient ingredient11 = new Ingredient(focaccia, ciabattaFlour, "Dough", 600);
-  Ingredient ingredient12 = new Ingredient(focaccia, salt, "Dough", 400);
-  Ingredient ingredient13 = new Ingredient(focaccia, water, "Dough", 400);
-  Ingredient ingredient14 = new Ingredient(focaccia, oliveOil, "Dough", 40);
+  Ingredient ingredient12 = new Ingredient(focaccia, salt, "Dough", 20);
+  Ingredient ingredient13 = new Ingredient(focaccia, water, "Dough", 320);
+  Ingredient ingredient14 = new Ingredient(focaccia, oliveOil, "Dough", 60);
   Ingredient ingredient15 = new Ingredient(focaccia, yeast, "Dough", 8);
     ingredientRepository.save(ingredient8);
     ingredientRepository.save(ingredient9);
@@ -164,6 +166,31 @@ public class DataLoader implements ApplicationRunner {
     ingredientRepository.save(ingredient23);
     ingredientRepository.save(ingredient24);
     ingredientRepository.save(ingredient25);
+
+    Recipe recipe4 = new Recipe("Barley Grain and Ale Sourdough", "Sourdough");
+    recipeRepository.save(recipe4);
+    Ingredient ingredient26 = new Ingredient(recipe4, strongBreadFlour, "Levain", 600);
+    Ingredient ingredient27 = new Ingredient(recipe4, water, "Levain", 480);
+    Ingredient ingredient28 = new Ingredient(recipe4, wheatStarter, "Levain", 120);
+    Ingredient ingredient29 = new Ingredient(recipe4, strongBreadFlour, "Dough", 4000);
+    Ingredient ingredient30 = new Ingredient(recipe4, wholewheatFlour, "Dough", 400);
+    Ingredient ingredient31 = new Ingredient(recipe4, salt, "Dough", 100);
+    Ingredient ingredient32 = new Ingredient(recipe4, water, "Dough", 2400);
+    Ingredient ingredient33 = new Ingredient(recipe4, ale, "Dough", 1000);
+    Ingredient ingredient34 = new Ingredient(recipe4, flaxSeeds, "Dough", 300);
+    Ingredient ingredient35 = new Ingredient(recipe4, sunflowerSeeds, "Dough", 300);
+    Ingredient ingredient36 = new Ingredient(recipe4, pearlBarley, "Dough", 350);
+    ingredientRepository.save(ingredient26);
+    ingredientRepository.save(ingredient27);
+    ingredientRepository.save(ingredient28);
+    ingredientRepository.save(ingredient29);
+    ingredientRepository.save(ingredient30);
+    ingredientRepository.save(ingredient31);
+    ingredientRepository.save(ingredient32);
+    ingredientRepository.save(ingredient33);
+    ingredientRepository.save(ingredient34);
+    ingredientRepository.save(ingredient36);
+    ingredientRepository.save(ingredient36);
 
 
 

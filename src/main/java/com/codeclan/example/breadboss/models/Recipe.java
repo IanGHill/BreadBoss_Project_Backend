@@ -33,7 +33,7 @@ public class Recipe {
   private Date updated;
 
 
-  @OneToMany(mappedBy = "recipe")
+  @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Ingredient> ingredients;
 
   @PrePersist
