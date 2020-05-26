@@ -46,7 +46,7 @@ public class RecipeController {
     return new ResponseEntity<>(Recipe, HttpStatus.CREATED);
   }
 
-  @PutMapping(value = "/recipes/{id}")
+  @PutMapping(value = "/recipes/update/{id}")
   public ResponseEntity<Recipe> putRecipe(@RequestBody Recipe Recipe, @PathVariable Long id){
     recipeRepository.save(Recipe);
     return new ResponseEntity<>(Recipe, HttpStatus.CREATED);

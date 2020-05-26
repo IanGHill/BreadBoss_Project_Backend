@@ -1,6 +1,8 @@
 package com.codeclan.example.breadboss.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -24,16 +26,16 @@ public class Recipe {
   @Column
   private String imageUrl;
 
-  @Column
-    (name = "created", nullable = false, updatable=false)
+  @Column (name = "created", nullable = false, updatable=false)
+  @CreationTimestamp
   private Date created;
 
-  @Column
-    (name = "updated", nullable = false)
+  @Column (name = "updated",  nullable = false)
+  @UpdateTimestamp
   private Date updated;
 
 
-  @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
+  @OneToMany(mappedBy = "recipe", cascade = CascadeType.REMOVE)
   private List<Ingredient> ingredients;
 
   @PrePersist
@@ -116,5 +118,9 @@ public class Recipe {
 
   public void addIngredient(Ingredient ingredient){
     this.ingredients.add(ingredient);
+  }
+
+  public void removeIngredient(Ingredient ingredient){
+    this.ingredients.remove(ingredient);
   }
 }
