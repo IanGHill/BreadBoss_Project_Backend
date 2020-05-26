@@ -43,7 +43,7 @@ public class IngredientController {
     return new ResponseEntity<>(ingredientRepository.findById(id), HttpStatus.OK);
   }
 
-  @PostMapping(value = "/ingredients")
+  @PostMapping(value = "/ingredients/new")
   public ResponseEntity<Ingredient> postIngredient(@RequestBody Ingredient ingredient){
     ingredientRepository.save(ingredient);
     return new ResponseEntity<>(ingredient, HttpStatus.CREATED);

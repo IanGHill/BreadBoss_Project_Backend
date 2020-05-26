@@ -40,7 +40,7 @@ public class RecipeController {
     return new ResponseEntity<>(recipeRepository.findById(id), HttpStatus.OK);
   }
 
-  @PostMapping(value = "/recipes")
+  @PostMapping(value = "/recipes/new")
   public ResponseEntity<Recipe> postRecipe(@RequestBody Recipe Recipe){
     recipeRepository.save(Recipe);
     return new ResponseEntity<>(Recipe, HttpStatus.CREATED);
