@@ -60,7 +60,7 @@ public class DataLoader implements ApplicationRunner {
     RawMaterial sesameOil = new RawMaterial("Sesame Oil","Other","Morrisons",250, (float) 1.8);
     RawMaterial rawMaterial35 = new RawMaterial("Sweet Potato - Dried","Other","Morrisons",500, (float) 1.0);
     RawMaterial rawMaterial36 = new RawMaterial("Sweet Potato - Fresh","Other","Morrisons",1000, (float) 1.0);
-    RawMaterial rawMaterial37 = new RawMaterial("Walnuts","Other","Wholefoods online",1000, (float) 8.99);
+    RawMaterial walnuts = new RawMaterial("Walnuts","Other","Wholefoods online",1000, (float) 8.99);
     RawMaterial salt = new RawMaterial("Sea Salt","Salt","Morrisons",350, (float) 0.8);
     RawMaterial ryeStarter = new RawMaterial("Starter - Rye","Starter","N/A",0, (float) 0.0);
     RawMaterial wheatStarter = new RawMaterial("Starter - Wheat","Starter","N/A",0, (float) 0.0);
@@ -101,7 +101,7 @@ public class DataLoader implements ApplicationRunner {
     rawMaterialRepository.save(sesameOil);
     rawMaterialRepository.save(rawMaterial35);
     rawMaterialRepository.save(rawMaterial36);
-    rawMaterialRepository.save(rawMaterial37);
+    rawMaterialRepository.save(walnuts);
     rawMaterialRepository.save(salt);
     rawMaterialRepository.save(ryeStarter);
     rawMaterialRepository.save(wheatStarter);
@@ -364,6 +364,25 @@ public class DataLoader implements ApplicationRunner {
     ingredientRepository.save(ingredient102);
     ingredientRepository.save(ingredient103);
 
+    Recipe walnutSD = new Recipe("Walnut Sourdough", "Sourdough");
+    walnutSD.setImageUrl("walnut.jpg");
+    recipeRepository.save(walnutSD);
+    Ingredient ingredient104 = new Ingredient(walnutSD, darkRyeFlour, "Levain", 560);
+    Ingredient ingredient105 = new Ingredient(walnutSD, T85, "Levain", 560);
+    Ingredient ingredient106 = new Ingredient(walnutSD, water, "Levain", 1050);
+    Ingredient ingredient107 = new Ingredient(walnutSD, wheatStarter, "Levain", 245);
+    Ingredient ingredient108 = new Ingredient(walnutSD, strongBreadFlour, "Dough", 5880);
+    Ingredient ingredient109 = new Ingredient(walnutSD, salt, "Dough", 140);
+    Ingredient ingredient110 = new Ingredient(walnutSD, water, "Dough", 4200);
+    Ingredient ingredient111 = new Ingredient(walnutSD, walnuts, "Dough", 1680);
+    ingredientRepository.save(ingredient104);
+    ingredientRepository.save(ingredient105);
+    ingredientRepository.save(ingredient106);
+    ingredientRepository.save(ingredient107);
+    ingredientRepository.save(ingredient108);
+    ingredientRepository.save(ingredient109);
+    ingredientRepository.save(ingredient110);
+    ingredientRepository.save(ingredient111);
 
 
 
