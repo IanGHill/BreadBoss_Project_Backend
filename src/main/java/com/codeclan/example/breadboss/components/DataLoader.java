@@ -55,7 +55,7 @@ public class DataLoader implements ApplicationRunner {
     RawMaterial cuminSeeds = new RawMaterial("Seeds - Cumin","Other","Morrisons",37, (float) 0.8);
     RawMaterial pumpkinSeeds = new RawMaterial("Seeds - Pumpkin","Other","Wholefoods online",1000, (float) 6.47);
     RawMaterial sunflowerSeeds = new RawMaterial("Seeds - Sunflower","Other","Wholefoods online",1000, (float) 3.67);
-    RawMaterial caraway = new RawMaterial("Caraway","Other","Wholefoods online",100, (float) 3.67);
+    RawMaterial caraway = new RawMaterial("Seeds - Caraway","Other","Wholefoods online",100, (float) 3.67);
     RawMaterial rawMaterial33 = new RawMaterial("Seeds - White Sesame","Other","Wholefoods online",1000, (float) 4.91);
     RawMaterial sesameOil = new RawMaterial("Sesame Oil","Other","Morrisons",250, (float) 1.8);
     RawMaterial rawMaterial35 = new RawMaterial("Sweet Potato - Dried","Other","Morrisons",500, (float) 1.0);
@@ -91,23 +91,25 @@ public class DataLoader implements ApplicationRunner {
     rawMaterialRepository.save(rawMaterial24);
     rawMaterialRepository.save(pearlBarley);
     rawMaterialRepository.save(rawMaterial26);
+    rawMaterialRepository.save(salt);
+    rawMaterialRepository.save(sugar);
     rawMaterialRepository.save(rawMaterial27);
-    rawMaterialRepository.save(flaxSeeds);
+    rawMaterialRepository.save(caraway);
     rawMaterialRepository.save(chiaSeeds);
     rawMaterialRepository.save(cuminSeeds);
+    rawMaterialRepository.save(flaxSeeds);
     rawMaterialRepository.save(pumpkinSeeds);
     rawMaterialRepository.save(sunflowerSeeds);
     rawMaterialRepository.save(rawMaterial33);
     rawMaterialRepository.save(sesameOil);
     rawMaterialRepository.save(rawMaterial35);
     rawMaterialRepository.save(rawMaterial36);
-    rawMaterialRepository.save(walnuts);
-    rawMaterialRepository.save(salt);
+
     rawMaterialRepository.save(ryeStarter);
     rawMaterialRepository.save(wheatStarter);
-    rawMaterialRepository.save(sugar);
+    rawMaterialRepository.save(walnuts);
     rawMaterialRepository.save(yeast);
-    rawMaterialRepository.save(caraway);
+
 
     Recipe recipe1 = new Recipe("50:50 Wholewheat Sourdough","Sourdough");
     recipe1.setImageUrl("5050wholewheat.jpg");
