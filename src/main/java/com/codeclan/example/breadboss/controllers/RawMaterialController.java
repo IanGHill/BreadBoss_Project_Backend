@@ -1,6 +1,7 @@
 package com.codeclan.example.breadboss.controllers;
 
 import com.codeclan.example.breadboss.models.RawMaterial;
+import com.codeclan.example.breadboss.models.Supplier;
 import com.codeclan.example.breadboss.repositories.RawMaterialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,7 +22,7 @@ public class RawMaterialController {
 
     @RequestParam(name = "type", required = false) String type,
     @RequestParam(name = "name", required = false) String name,
-    @RequestParam(name = "supplier", required = false) String supplier,
+    @RequestParam(name = "supplier", required = false) Supplier supplier,
     @RequestParam(name = "recipe-name", required = false) String recipeName,
     @RequestParam(name = "type-in", required = false) Collection<String> types
   )

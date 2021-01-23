@@ -1,6 +1,7 @@
 package com.codeclan.example.breadboss.repositories;
 
 import com.codeclan.example.breadboss.models.RawMaterial;
+import com.codeclan.example.breadboss.models.Supplier;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -18,7 +19,7 @@ public interface RawMaterialRepository extends JpaRepository<RawMaterial, Long> 
 
   List<RawMaterial>findByTypeIn(Collection<String> types);
 
-  List<RawMaterial> findBySupplier(String supplier);
+  List<RawMaterial> findBySupplier(Supplier supplier);
 
   List<RawMaterial> findAllByIngredientsRecipeName(String name);
 }

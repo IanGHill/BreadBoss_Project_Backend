@@ -3,9 +3,11 @@ package com.codeclan.example.breadboss.components;
 import com.codeclan.example.breadboss.models.Ingredient;
 import com.codeclan.example.breadboss.models.RawMaterial;
 import com.codeclan.example.breadboss.models.Recipe;
+import com.codeclan.example.breadboss.models.Supplier;
 import com.codeclan.example.breadboss.repositories.IngredientRepository;
 import com.codeclan.example.breadboss.repositories.RawMaterialRepository;
 import com.codeclan.example.breadboss.repositories.RecipeRepository;
+import com.codeclan.example.breadboss.repositories.SupplierRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -23,25 +25,36 @@ public class DataLoader implements ApplicationRunner {
   @Autowired
   RecipeRepository recipeRepository;
 
+  @Autowired
+  SupplierRepository supplierRepository;
+
   public void run(ApplicationArguments args) {
 
-    RawMaterial ciabattaFlour = new RawMaterial("Flour - Ciabatta (T00)","Flour","Shipton Mill",1000, (float) 1.30);
-    RawMaterial rawMaterial2 = new RawMaterial("Flour - Einkorn","Flour","Shipton Mill",1000, (float) 2.1);
-    RawMaterial rawMaterial3 = new RawMaterial("Flour - Emmer","Flour","Shipton Mill",1000, (float) 1.75);
-    RawMaterial extraStrongFlour = new RawMaterial("Flour - Extra Strong","Flour","Mungoswells",16000, (float) 13.55);
-    RawMaterial rawMaterial5 = new RawMaterial("Flour - Granary","Flour","Shipton Mill",1000, (float) 1.3);
-    RawMaterial rawMaterial6 = new RawMaterial("Flour - Khorasan","Flour","Shipton Mill",1000, (float) 1.75);
-    RawMaterial darkRyeFlour = new RawMaterial("Flour - Rye Dark","Flour","Mungoswells",16000, (float) 12.17);
-    RawMaterial rawMaterial8 = new RawMaterial("Flour - Rye Light","Flour","Shipton Mill",1000, (float) 1.3);
-    RawMaterial rawMaterial9 = new RawMaterial("Flour - Spelt White","Flour","Shipton Mill",1000, (float) 2.0);
-    RawMaterial rawMaterial10 = new RawMaterial("Flour - Spelt Wholemeal","Flour","Shipton Mill",1000, (float) 2.23);
-    RawMaterial strongBreadFlour= new RawMaterial("Flour - Strong Bread","Flour","Mungoswells",16000, (float) 16.09);
-    RawMaterial T85 = new RawMaterial("Flour - T85","Flour","Mungoswells",16000, (float) 15.40);
-    RawMaterial wholewheatFlour = new RawMaterial("Flour - Wholewheat","Flour","Mungoswells",16000, (float) 14.86);
+    Supplier shiptonMill = new Supplier("Shipton Mill", "Bob", "Miller", "07999123456", "orders@shiptonmill.co.uk");
+    Supplier mungoswells = new Supplier("Mungoswells", "Alison", "Miller", "07999123456", "orders@mungoswells.co.uk");
+    Supplier morrisons = new Supplier("Morrisons", "Don", "Morrison", "07999123456", "orders@morrisons.co.uk");
+    Supplier wholefoods = new Supplier("Wholefoods Online", "Max", "Davidson", "07999123456", "orders@wholefoods.co.uk");
+    Supplier none = new Supplier("None", "N/A", "N/A", "N/A", "N/A");
+
+    supplierRepository.save(shiptonMill);
+    supplierRepository.save(mungoswells);
+    RawMaterial ciabattaFlour = new RawMaterial("Flour - Ciabatta (T00)","Flour",shiptonMill,1000, (float) 1.30);
+    RawMaterial rawMaterial2 = new RawMaterial("Flour - Einkorn","Flour",shiptonMill,1000, (float) 2.1);
+    RawMaterial rawMaterial3 = new RawMaterial("Flour - Emmer","Flour",shiptonMill,1000, (float) 1.75);
+    RawMaterial extraStrongFlour = new RawMaterial("Flour - Extra Strong","Flour",mungoswells,16000, (float) 13.55);
+    RawMaterial rawMaterial5 = new RawMaterial("Flour - Granary","Flour",shiptonMill,1000, (float) 1.3);
+    RawMaterial rawMaterial6 = new RawMaterial("Flour - Khorasan","Flour",shiptonMill,1000, (float) 1.75);
+    RawMaterial darkRyeFlour = new RawMaterial("Flour - Rye Dark","Flour",mungoswells,16000, (float) 12.17);
+    RawMaterial rawMaterial8 = new RawMaterial("Flour - Rye Light","Flour",shiptonMill,1000, (float) 1.3);
+    RawMaterial rawMaterial9 = new RawMaterial("Flour - Spelt White","Flour",shiptonMill,1000, (float) 2.0);
+    RawMaterial rawMaterial10 = new RawMaterial("Flour - Spelt Wholemeal","Flour",shiptonMill,1000, (float) 2.23);
+    RawMaterial strongBreadFlour= new RawMaterial("Flour - Strong Bread","Flour",mungoswells,16000, (float) 16.09);
+    RawMaterial T85 = new RawMaterial("Flour - T85","Flour",mungoswells,16000, (float) 15.40);
+    RawMaterial wholewheatFlour = new RawMaterial("Flour - Wholewheat","Flour",mungoswells,16000, (float) 14.86);
     RawMaterial YQflour = new RawMaterial("Flour - YQ","Flour","Hodemedods",3000, (float) 4.99);
     RawMaterial ale = new RawMaterial("Ale","Liquid","Lidl",500, (float) 1.25);
     RawMaterial water = new RawMaterial("Water","Liquid","N/A",0, (float) 0.0);
-    RawMaterial rawMaterial19 = new RawMaterial("5 Grain Blend","Other","Shipton Mill",1000, (float) 1.3);
+    RawMaterial rawMaterial19 = new RawMaterial("5 Grain Blend","Other",shiptonMill,1000, (float) 1.3);
     RawMaterial beetroot = new RawMaterial("Beetroot - Roasted","Other","Morrisons",200, (float) 1.7);
     RawMaterial misoPaste = new RawMaterial("Miso","Other","Wholefoods online",300, (float) 3.0);
     RawMaterial oliveOil = new RawMaterial("Olive Oil","Other","Lidl",750, (float) 2.39);

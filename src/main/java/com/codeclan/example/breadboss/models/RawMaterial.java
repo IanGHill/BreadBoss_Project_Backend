@@ -21,9 +21,6 @@ public class RawMaterial {
   private String type;
 
   @Column
-  private String supplier;
-
-  @Column
   private int packSize;
 
   @Column
@@ -33,7 +30,11 @@ public class RawMaterial {
   @OneToMany(mappedBy = "rawMaterial")
   private List<Ingredient> ingredients;
 
-  public RawMaterial(String name, String type, String supplier, int packSize, float price) {
+  @ManyToOne
+  @JoinColumn(name = "supplier_id", nullable = false)
+  private Supplier supplier;
+
+  public RawMaterial(String name, String type, Supplier supplier, int packSize, float price) {
     this.name = name;
     this.type = type;
     this.supplier = supplier;
@@ -69,11 +70,11 @@ public class RawMaterial {
     this.type = type;
   }
 
-  public String getSupplier() {
+  public Supplier getSupplier() {
     return supplier;
   }
 
-  public void setSupplier(String supplier) {
+  public void setSupplier(Supplier supplier) {
     this.supplier = supplier;
   }
 
