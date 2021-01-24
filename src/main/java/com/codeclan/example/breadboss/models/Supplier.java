@@ -15,7 +15,7 @@ public class Supplier {
     private Long Id;
 
     @Column
-    private String businessName;
+    private String name;
 
     @Column
     private String contactFirstName;
@@ -33,8 +33,8 @@ public class Supplier {
     @OneToMany(mappedBy = "supplier")
     private List<RawMaterial> rawMaterials;
 
-    public Supplier(String businessName, String contactFirstName, String contactLastName, String telephoneNumber, String emailAddress) {
-        this.businessName = businessName;
+    public Supplier(String name, String contactFirstName, String contactLastName, String telephoneNumber, String emailAddress) {
+        this.name = name;
         this.contactFirstName = contactFirstName;
         this.contactLastName = contactLastName;
         this.telephoneNumber = telephoneNumber;
@@ -53,12 +53,12 @@ public class Supplier {
         Id = id;
     }
 
-    public String getBusinessName() {
-        return businessName;
+    public String getName() {
+        return name;
     }
 
-    public void setBusinessName(String businessName) {
-        this.businessName = businessName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getContactFirstName() {
